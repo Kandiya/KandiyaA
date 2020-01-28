@@ -33,6 +33,7 @@ class UserController extends Controller
             'alamat' => 'required|string|max:255',
             'telp' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'level' => 'required',
             'password' => 'required|string|min:6|confirmed',
         ]);
 
@@ -45,6 +46,7 @@ class UserController extends Controller
             'alamat' => $request->get('alamat'),
             'telp' => $request->get('telp'),
             'email' => $request->get('email'),
+            'level' => $request->get('level'),
             'password' => Hash::make($request->get('password')),
         ]);
 
