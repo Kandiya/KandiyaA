@@ -13,4 +13,8 @@ class Buku extends Model
     protected $fillable=[
         'judul', 'penerbit', 'pengarang', 'foto'
     ];
+
+    public function detail_peminjaman(){
+        return this()->hasMany('App\detail_peminjaman', 'id');
+    }
 }
